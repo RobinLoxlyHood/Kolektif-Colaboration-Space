@@ -1,0 +1,2 @@
+
+./odoo-bin --addons-path=/home/rizki/odoo-project/KolektifOdoo16/addons,/home/rizki/odoo-project/KolektifOdoo16/addonsx -d kolektif1 --db_port 5432 --xmlrpc-port=8070  --limit-memory-hard 0 --limit-time-real=10000 -u kolektifodoo16

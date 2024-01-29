@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.penyewaan tree view -->
+    <record id="kolektif_penyewaan_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.penyewaan.view.tree</field>
+        <field name="model">kolektif.penyewaan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="referensi"/>
+                <field name="ruangan_id"/>
+                <field name="nama_pelanggan"/>
+                <field name="tgl_sewa"/>
+                <field name="jam_mulai"/>
+                <field name="jam_selesai"/>
+                <field name="durasi_sewa"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.penyewaan form view -->
+    <record id="kolektif_penyewaan_view_form" model="ir.ui.view">
+        <field name="name">kolektif.penyewaan.view.form</field>
+        <field name="model">kolektif.penyewaan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="referensi"/>
+                        <field name="ruangan_id"/>
+                        <field name="nama_pelanggan"/>
+                        <field name="tgl_sewa"/>
+                        <field name="jam_mulai"/>
+                        <field name="jam_selesai"/>
+                        <field name="durasi_sewa"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.penyewaan action window -->
+    <record id="kolektif_penyewaan_action" model="ir.actions.act_window">
+        <field name="name">kolektif.penyewaan.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.penyewaan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_penyewaan_menu_act" 
+            name="Daftar Penyewaan" 
+            parent="kolektif_penyewaan_menu_categ" 
+            action="kolektif_penyewaan_action" 
+            sequence="5"/>
+</odoo>

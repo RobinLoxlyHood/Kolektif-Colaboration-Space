@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.bahanbaku tree view -->
+    <record id="kolektif_bahanbaku_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.bahanbaku.view.tree</field>
+        <field name="model">kolektif.bahanbaku</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="kode"/>
+                <field name="menu_id"/>
+                <field name="name"/>
+                <field name="komposisi"/>
+                <field name="stock"/>
+                <field name="harga"/>
+                <field name="supplier_ids"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.bahanbaku form view -->
+    <record id="kolektif_bahanbaku_view_form" model="ir.ui.view">
+        <field name="name">kolektif.bahanbaku.view.form</field>
+        <field name="model">kolektif.bahanbaku</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="kode"/>
+                        <field name="menu_id"/>
+                        <field name="name"/>
+                        <field name="komposisi"/>
+                        <field name="stock"/>
+                        <field name="harga"/>
+                        <field name="supplier_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.bahanbaku action window -->
+    <record id="kolektif_bahanbaku_action" model="ir.actions.act_window">
+        <field name="name">Daftar Bahan Baku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.bahanbaku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_bahanbaku_menu_act" 
+            name="Daftar Bahan Baku" 
+            parent="kolektif_bahanbaku_menu_categ" 
+            action="kolektif_bahanbaku_action" 
+            sequence="5"/>
+</odoo>

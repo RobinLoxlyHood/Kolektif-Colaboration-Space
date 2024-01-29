@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.pelanggan tree view -->
+    <record id="kolektif_pelanggan_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.pelanggan.view.tree</field>
+        <field name="model">kolektif.pelanggan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="kode"/>
+                <field name="nama_pelanggan"/>
+                <field name="level"/>
+                <field name="point"/>
+                <field name="tgl_daftar"/>
+                <field name="penjualan_ids"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.pelanggan form view -->
+    <record id="kolektif_pelanggan_form_view_form" model="ir.ui.view">
+        <field name="name">kolektif.pelanggan.view.form</field>
+        <field name="model">kolektif.pelanggan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="kode"/>
+                        <field name="nama_pelanggan"/>
+                        <field name="level"/>
+                        <field name="point"/>
+                        <field name="tgl_daftar"/>
+                        <field name="penjualan_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.pelanggan action window -->
+    <record id="kolektif_pelanggan_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.pelanggan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_pelanggan_menu_act" 
+            name="Daftar Pelanggan" 
+            parent="kolektif_pelanggan_menu_categ" 
+            action="kolektif_pelanggan_action" 
+            sequence="5"/>
+</odoo>

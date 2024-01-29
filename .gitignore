@@ -1,0 +1,15 @@
+addons
+debian
+doc
+odoo
+setup
+venv38
+CONTRIBUTING.md
+COPYRIGHT
+LICENSE
+MANIFEST.in
+odoo-bin
+README.md
+SECURITY.md
+setup.cfg
+setup.py

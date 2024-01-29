@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kolektif_manusia,access.kolektif.manusia,model_kolektif_manusia,,1,1,1,1
+access_kolektif_karyawan,access.kolektif.karyawan,model_kolektif_karyawan,,1,1,1,1
+access_kolektif_menu,access.kolektif.menu,model_kolektif_menu,,1,1,1,1
+access_kolektif_jenismenu,access.kolektif.jenismenu,model_kolektif_jenismenu,,1,1,1,1
+access_kolektif_pelanggan,access.kolektif.pelanggan,model_kolektif_pelanggan,,1,1,1,1
+access_kolektif_penjualan,access.kolektif.penjualan,model_kolektif_penjualan,,1,1,1,1
+access_kolektif_detailpenjualan,access.kolektif.detailpenjualan,model_kolektif_detailpenjualan,,1,1,1,1
+access_kolektif_bahanbaku,access.kolektif.bahanbaku,model_kolektif_bahanbaku,,1,1,1,1
+access_kolektif_supplier,access.kolektif.supplier,model_kolektif_supplier,,1,1,1,1
+access_kolektif_pembelian,access.kolektif.pembelian,model_kolektif_pembelian,,1,1,1,1
+access_kolektif_penyewaan,access.kolektif.penyewaan,model_kolektif_penyewaan,,1,1,1,1
+access_kolektif_ruangan,access.kolektif.ruangan,model_kolektif_ruangan,,1,1,1,1

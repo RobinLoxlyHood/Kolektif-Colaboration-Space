@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.karyawan tree view -->
+    <record id="kolektif_karyawan_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.karyawan.view.tree</field>
+        <field name="model">kolektif.karyawan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tempat_lahir"/>
+                <field name="tanggal_lahir"/>
+                <field name="jenis_kelamin"/>
+                <field name="alamat"/>
+                <field name="npwp"/>
+                <field name="bagian"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.karyawan form view -->
+    <record id="kolektif_karyawan_view_form" model="ir.ui.view">
+        <field name="name">kolektif.karyawan.view.form</field>
+        <field name="model">kolektif.karyawan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tempat_lahir"/>
+                        <field name="tanggal_lahir"/>
+                        <field name="jenis_kelamin"/>
+                        <field name="alamat"/>
+                        <field name="npwp"/>
+                        <field name="bagian"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.karyawan action window -->
+    <record id="kolektif_karyawan_action" model="ir.actions.act_window">
+        <field name="name">Daftar Karyawan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.karyawan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_karyawan_menu_act" 
+            name="Daftar Karyawan" 
+            parent="kolektif_karyawan_menu_categ" 
+            action="kolektif_karyawan_action" 
+            sequence="5"/>
+</odoo>

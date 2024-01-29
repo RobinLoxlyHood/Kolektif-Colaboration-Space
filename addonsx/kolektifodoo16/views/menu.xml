@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="kolektif_menu_root" 
+            name="Kolektif Collaboraction Space" 
+            sequence="10"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_karyawan_menu_categ" 
+            name="Karyawan" 
+            parent="kolektif_menu_root" 
+            sequence="5"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_menu_menu_categ" 
+            name="Menu" 
+            parent="kolektif_menu_root" 
+            sequence="10"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_jenis_menu_menu_categ" 
+            name="Jenis Menu" 
+            parent="kolektif_menu_root" 
+            sequence="15"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_pelanggan_menu_categ" 
+            name="Pelanggan" 
+            parent="kolektif_menu_root" 
+            sequence="20"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_penjualan_menu_categ" 
+            name="Penjualan" 
+            parent="kolektif_menu_root" 
+            sequence="25"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_bahanbaku_menu_categ" 
+            name="Bahan baku" 
+            parent="kolektif_menu_root" 
+            sequence="30"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_pembelian_menu_categ" 
+            name="Pembelian" 
+            parent="kolektif_menu_root" 
+            sequence="35"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_supplier_menu_categ" 
+            name="Supplier" 
+            parent="kolektif_menu_root" 
+            sequence="40"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_ruangan_menu_categ" 
+            name="Ruangan" 
+            parent="kolektif_menu_root" 
+            sequence="45"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_jenis_ruangan_menu_categ" 
+            name="Jenis Ruangan" 
+            parent="kolektif_menu_root" 
+            sequence="50"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kolektif_penyewaan_menu_categ" 
+            name="Penyewaan Ruangan" 
+            parent="kolektif_menu_root" 
+            sequence="55"/>
+</odoo>

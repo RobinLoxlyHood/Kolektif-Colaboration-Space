@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.pembelian tree view -->
+    <record id="kolektif_pembelian_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.pembelian.view.tree</field>
+        <field name="model">kolektif.pembelian</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="referensi"/>
+                <field name="bahanbaku_id"/>
+                <field name="supplier_id"/>
+                <field name="tgl_transaksi"/>
+                <field name="modal"/>
+                <field name="qty_bayar"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.pembelian form view -->
+    <record id="kolektif_pembelian_view_form" model="ir.ui.view">
+        <field name="name">kolektif.pembelian.view.form</field>
+        <field name="model">kolektif.pembelian</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="referensi"/>
+                        <field name="bahanbaku_id"/>
+                        <field name="supplier_id"/>
+                        <field name="tgl_transaksi"/>
+                        <field name="modal"/>
+                        <field name="qty_bayar"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.pembelian action window -->
+    <record id="kolektif_pembelian_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pembelian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.pembelian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_pembelian_menu_act" 
+            name="Daftar Pembelian" 
+            parent="kolektif_pembelian_menu_categ" 
+            action="kolektif_pembelian_action" 
+            sequence="5"/>
+</odoo>
