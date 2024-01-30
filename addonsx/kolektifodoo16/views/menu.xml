@@ -3,7 +3,9 @@
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="kolektif_menu_root" 
             name="Kolektif Collaboraction Space" 
-            sequence="10"/>
+            sequence="10"
+            web_icon="Kolektif Collaboraction Space,static/description/icon.png"
+            />
     
     <!-- This Menu Item Must have a parent -->
     <menuitem id="kolektif_karyawan_menu_categ" 
@@ -12,7 +14,7 @@
             sequence="5"/>
     
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="kolektif_menu_menu_categ" 
+    <menuitem id="kolektif_makanan_minuman_menu_categ" 
             name="Menu" 
             parent="kolektif_menu_root" 
             sequence="10"/>
@@ -60,14 +62,8 @@
             sequence="45"/>
     
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="kolektif_jenis_ruangan_menu_categ" 
-            name="Jenis Ruangan" 
-            parent="kolektif_menu_root" 
-            sequence="50"/>
-    
-    <!-- This Menu Item Must have a parent -->
     <menuitem id="kolektif_penyewaan_menu_categ" 
             name="Penyewaan Ruangan" 
             parent="kolektif_menu_root" 
-            sequence="55"/>
+            sequence="50"/>
 </odoo>

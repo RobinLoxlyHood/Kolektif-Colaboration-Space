@@ -1,12 +1,16 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class KolektifPelanggan(models.Model):
     _name = 'kolektif.pelanggan'
     _description = 'KolektifPelanggan'
     _inherit = 'kolektif.manusia'
-    _rec_name = 'nama_pelanggan'
+    _rec_name = 'kode'
 
-    kode = fields.Char(string='Kode')
+    kode = fields.Char(string="Kode Pelanggan",
+                                 required=True, 
+                                 copy=False, 
+                                 readonly=True,
+                                 default=lambda self: _('New'))
     nama_pelanggan = fields.Char(string='Nama Pelanggan')
     level = fields.Char(compute='_onchange_point', string='Level Member')
     tgl_daftar = fields.Date(string='Tanggal Daftar',
@@ -30,3 +34,10 @@ class KolektifPelanggan(models.Model):
                 rec.level = "Gold"
             else:
                 rec.level = "Silver"
+
+    @api.model
+    def create(self,vals):
+        if vals.get('kode', _("New")) == _("New"):                
+           vals['kode'] = self.env['ir.sequence'].next_by_code('kolektifodoo16.referensi.pelanggan') or _("New")
+        record = super(KolektifPelanggan, self).create(vals)
+        return record

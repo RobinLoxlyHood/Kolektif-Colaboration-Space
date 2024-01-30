@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class KolektifPembelian(models.Model):
     _name = 'kolektif.pembelian'
@@ -6,11 +6,11 @@ class KolektifPembelian(models.Model):
     _rec_name = 'referensi'
 
 
-    # referensi = fields.Char(
-    #     string="No. Reference",
-    #     required=True, copy=False, readonly=True,
-    #     default=lambda self: ('New'))
-    referensi = fields.Char(string='Referensi')
+    referensi = fields.Char(
+        string="No. Reference",
+        required=True, copy=False, readonly=True,
+        default=lambda self: ('New'))
+    # referensi = fields.Char(string='Referensi')
     bahanbaku_id = fields.Many2one(comodel_name='kolektif.bahanbaku', string='Daftar Bahan Baku')
     supplier_id = fields.Many2one(comodel_name='kolektif.supplier', string='Daftar Supplier')
     tgl_transaksi = fields.Date(string='Tanggal Transaksi',
@@ -32,17 +32,17 @@ class KolektifPembelian(models.Model):
             rec.bayar = rec.bahanbaku_id.harga * rec.qty_bayar
     @api.model
     def create(self, vals):
-        # if vals.get('referensi', ("New")) == ("New"):                
-        #     vals['referensi'] = self.env['ir.sequence'].next_by_code('referensi.pembelian') or _("New")
+        if vals.get('referensi', ("New")) == ("New"):                
+            vals['referensi'] = self.env['ir.sequence'].next_by_code('kolektifodoo16.referensi.pembelian') or _("New")
         record = super(KolektifPembelian, self).create(vals)
         if record.qty_bayar:
             # Update stock in doodex.barang model
-            record.bahanbaku_id.stock += record.qty_bayar
+            record.bahanbaku_id.stok += record.qty_bayar
         return record
     
     def unlink(self):
         for r in self:
-            r.bahanbaku_id.stock -= r.qty_bayar
+            r.bahanbaku_id.stok -= r.qty_bayar
         record = super(KolektifPembelian, self).unlink()
     
     @api.onchange('bahanbaku_id')

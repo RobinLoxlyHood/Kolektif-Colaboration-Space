@@ -9,6 +9,8 @@
                 <!-- Add your fields here -->
                 <field name="referensi"/>
                 <field name="ruangan_id"/>
+                <field name="membership"/>
+                <field name="pelanggan_id"/>
                 <field name="nama_pelanggan"/>
                 <field name="tgl_sewa"/>
                 <field name="jam_mulai"/>
@@ -24,15 +26,22 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="referensi" readonly="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="referensi"/>
+                        <field name="membership"/>
+                        <field name="pelanggan_id" attrs="{'invisible':[('membership','=',False)]}"/>
+                        <field name="nama_pelanggan" attrs="{'invisible':[('membership','=',True)]}"/>
                         <field name="ruangan_id"/>
-                        <field name="nama_pelanggan"/>
                         <field name="tgl_sewa"/>
                         <field name="jam_mulai"/>
                         <field name="jam_selesai"/>
                         <field name="durasi_sewa"/>
+                        <field name="total_biaya"/>
                     </group>
                 </sheet>
             </form>
@@ -40,7 +49,7 @@
     </record>
     <!-- kolektif.penyewaan action window -->
     <record id="kolektif_penyewaan_action" model="ir.actions.act_window">
-        <field name="name">kolektif.penyewaan.action</field>
+        <field name="name">Daftar Penyewaan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">kolektif.penyewaan</field>
         <field name="view_mode">tree,form</field>

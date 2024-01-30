@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "kolektifodoo16",
+    'name': "Kolektif Colaboration Space",
 
     'summary': """
-        ini modul kolektif
+        Ini merupakan Modul Kolektif Colaboration Space,
+        yang didalamnya ada penjualan, pembeliaan dari supplier dan Penyewaan Ruangan
         """,
 
     'description': """
@@ -26,19 +27,26 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/referensi_penjualan.xml',
+        'data/referensi_pelanggan.xml',
+        'data/referensi_pembelian.xml',
+        'data/referensi_ruangan.xml',
+        'data/referensi_penyewaan.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/menu.xml',
         'views/karyawan_view.xml',
-        'views/menu_view.xml',
-        'views/jenismenu_view.xml',
-        'views/pelanggan_view.xml',
+        'views/makanan_view.xml',
+        'views/minuman_view.xml',
         'views/penjualan_view.xml',
         'views/bahanbaku_view.xml',
         'views/supplier_view.xml',
+        'views/pelanggan_view.xml',
         'views/pembelian_view.xml',
         'views/ruangan_view.xml',
+        'views/jenisruangan_view.xml',
         'views/penyewaan_view.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [

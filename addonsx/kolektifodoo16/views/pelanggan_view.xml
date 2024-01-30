@@ -23,9 +23,13 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="kode" readonly="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="kode"/>
                         <field name="nama_pelanggan"/>
                         <field name="level"/>
                         <field name="point"/>

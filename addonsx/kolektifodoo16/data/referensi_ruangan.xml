@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="kolektifodoo16_seq_ref_ruangan_kecil" model="ir.sequence">
+        <field name="name">Referensi Ruangan Kecil</field>
+        <field name="code">kolektifodoo16.referensi.ruangankecil</field>
+        <field name="prefix">KS.RK</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>   
+    </record>
+
+    <record id="kolektifodoo16_seq_ref_ruangan_sedang" model="ir.sequence">
+        <field name="name">Referensi Ruangan Sedang</field>
+        <field name="code">kolektifodoo16.referensi.ruangansedang</field>
+        <field name="prefix">KS.RS</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>   
+    </record>
+
+    <record id="kolektifodoo16_seq_ref_ruangan_besar" model="ir.sequence">
+        <field name="name">Referensi Ruangan Besar</field>
+        <field name="code">kolektifodoo16.referensi.ruanganbesar</field>
+        <field name="prefix">KS.RB</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>   
+    </record>
+    
+</odoo>

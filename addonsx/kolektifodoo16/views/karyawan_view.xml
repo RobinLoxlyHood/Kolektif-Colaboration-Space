@@ -14,6 +14,7 @@
                 <field name="alamat"/>
                 <field name="npwp"/>
                 <field name="bagian"/>
+                <field name="foto" widget= "image"/>
             </tree>
         </field>
     </record>
@@ -33,9 +34,38 @@
                         <field name="alamat"/>
                         <field name="npwp"/>
                         <field name="bagian"/>
+                        <field name="foto" widget= "image"/>
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+    <!-- kolektif.karyawan kanban view -->
+    <record id="kolektif_karyawan_view_kanban" model="ir.ui.view">
+        <field name="name">kolektif.karyawan.view.kanban</field>
+        <field name="model">kolektif.karyawan</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_content">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_image">
+                                    <field name="foto" widget="image"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <div>
+                                        <field name="bagian"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
     <!-- kolektif.karyawan action window -->
@@ -43,7 +73,7 @@
         <field name="name">Daftar Karyawan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">kolektif.karyawan</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="kolektif_karyawan_menu_act" 

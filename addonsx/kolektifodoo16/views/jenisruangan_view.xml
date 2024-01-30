@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.jenisruangan tree view -->
+    <record id="kolektif_jenisruangan_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.jenisruangan.view.tree</field>
+        <field name="model">kolektif.jenisruangan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kapasitas"/>
+                <field name="harga_sewa_per_jam"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.jenisruangan form view -->
+    <record id="kolektif_jenisruangan_view_form" model="ir.ui.view">
+        <field name="name">kolektif.jenisruangan.view.form</field>
+        <field name="model">kolektif.jenisruangan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kapasitas"/>
+                        <field name="harga_sewa_per_jam"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.jenisruangan action window -->
+    <record id="kolektif_jenisruangan_action" model="ir.actions.act_window">
+        <field name="name">kolektif.jenisruangan.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.jenisruangan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_jenis_ruangan_menu_act" 
+            name="Daftar Jenis Ruangan" 
+            parent="kolektif_ruangan_menu_categ" 
+            action="kolektif_jenisruangan_action" 
+            sequence="10"/>
+</odoo>

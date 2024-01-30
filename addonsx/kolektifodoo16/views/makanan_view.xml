@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- kolektif.makanan tree view -->
+    <record id="kolektif_makanan_view_tree" model="ir.ui.view">
+        <field name="name">kolektif.makanan.view.tree</field>
+        <field name="model">kolektif.makanan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+    <!-- kolektif.makanan form view -->
+    <record id="kolektif_makanan_view_form" model="ir.ui.view">
+        <field name="name">kolektif.makanan.view.form</field>
+        <field name="model">kolektif.makanan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="harga"/>
+                        <field name="restomakanandetail_ids">
+                            <tree editable='bottom'>
+                                <field name="restobahan_id"/>
+                                <field name="kebutuhan"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- kolektif.makanan action window -->
+    <record id="kolektif_makanan_action" model="ir.actions.act_window">
+        <field name="name">Daftar Makanan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kolektif.makanan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kolektif_makanan_menu_act" 
+            name="Menu Makanan " 
+            parent="kolektif_makanan_minuman_menu_categ" 
+            action="kolektif_makanan_action" 
+            sequence="5"/>
+</odoo>

@@ -1,65 +1,79 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <!-- kolektif.penjualan tree view -->
+    <!-- Kolektif Penjualan Tree View -->
     <record id="kolektif_penjualan_view_tree" model="ir.ui.view">
         <field name="name">kolektif.penjualan.view.tree</field>
         <field name="model">kolektif.penjualan</field>
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
-                <field name="kode"/>
-                <field name="membership"/>
-                <field name="nama_nonmember"/>
-                <field name="pelanggan_id"/>
-                <field name="id_member_penjualan"/>
+                <field name="kode_penjualan"/>
                 <field name="tgl_transaksi"/>
-                <field name="detailpenjualan_ids"/>
+                <field name="membership"/>
+                <field name="pelanggan_id"/>
+                <field name="nama"/>
                 <field name="total_bayar"/>
             </tree>
         </field>
     </record>
-    <!-- kolektif.penjualan form view -->
+
+    <!-- Kolektif Penjualan Form View -->
     <record id="kolektif_penjualan_view_form" model="ir.ui.view">
         <field name="name">kolektif.penjualan.view.form</field>
         <field name="model">kolektif.penjualan</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                    <group string="Penjualan">
-                            <field name="kode"/>
-                            <field name="membership"/>
-                            <field name="nama_nonmember"/>
-                            <field name="pelanggan_id"/>
-                            <field name="id_member_penjualan"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="kode_penjualan" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group col="2">
+                        <group string="Kode">
+                            <field name="qr_code" widget='image'/>                            
+                        </group>
+                        <group string="Data Transaksi">
+                            <!-- Add your fields here -->
                             <field name="tgl_transaksi"/>
+                            <field name="membership"/>
+                            <field name="pelanggan_id" attrs="{'invisible':[('membership','=',False)]}"/>
+                            <field name="nama" attrs="{'invisible':[('membership','=',True)]}"/>
                             <field name="total_bayar"/>
+                        </group>
                     </group>
-                    <group>
-                        <!-- Add your fields here -->
-                        <field name="detailpenjualan_ids">
-                            <tree editable='bottom'>
-                                    <field name="menu_id"/>
-                                    <field name="harga_satuan"/>
-                                    <field name="qty"/>
-                                    <field name="subtotal" sum='Total Bayar'/>
-                            </tree>
-                        </field>
-                    </group>
+                
+                    <field name="restodetailpenjualanmakanan_ids">
+                        <tree editable='bottom'>
+                            <field name="restomakanan_id"/>
+                            <field name="qty"/>
+                            <field name="subtotal"/>
+                        </tree>
+                    </field>
+                
+                    <field name="restodetailpenjualanminuman_ids">
+                        <tree editable='bottom'>
+                            <field name="restominuman_id"/>
+                            <field name="qty"/>
+                            <field name="subtotal"/>
+                        </tree>
+                    </field>
                 </sheet>
             </form>
         </field>
     </record>
-    <!-- kolektif.penjualan action window -->
+    <!-- Kolektif Penjualan Action Window -->
     <record id="kolektif_penjualan_action" model="ir.actions.act_window">
         <field name="name">Daftar Penjualan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">kolektif.penjualan</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <!-- This Menu Item must have a parent and an action -->
+
+    <!-- Menu Item for Kolektif Penjualan -->
     <menuitem id="kolektif_penjualan_menu_act" 
-            name="Daftar Penjualan" 
-            parent="kolektif_penjualan_menu_categ" 
-            action="kolektif_penjualan_action" 
-            sequence="5"/>
+              name="Daftar Penjualan" 
+              parent="kolektif_penjualan_menu_categ" 
+              action="kolektif_penjualan_action" 
+              sequence="5"/>
 </odoo>
