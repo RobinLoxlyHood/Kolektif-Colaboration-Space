@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_penjualan_template_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="pj">    
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 style="text-align: center;">NOTA PENJUALAN</h1>
+                        <table class="table" style="width: 100%;">
+                            <tr>
+                                <td style="width: 20%;">Qr Code </td>
+                                <td style="width: 80%;"><img t-att-src="'data:image/png;base64,%s' % pj.qr_code"/></td>
+                            </tr>
+                            <tr>
+                                <td>No </td>
+                                <td><span t-field="pj.kode_penjualan"/></td>
+                            </tr>
+                            <tr>
+                                <td>Nama </td>
+                                <td><span t-field="pj.nama"/></td>
+                            </tr>
+                            <tr>
+                                <td>Id</td>
+                                <td><span t-field="pj.pelanggan_id"/></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Transaksi </td>
+                                <td><span t-field="pj.tgl_transaksi"/></td>
+                            </tr>
+                            <tr>
+                                <td>Apakah Member </td>
+                                <td><span t-field="pj.membership"/></td>
+                            </tr>
+                        </table>
+                        <table class="table" style="width: 100%;">
+                        <h3 style="padding-top: 100pt; text-align: center;">DETAIL PENJUALAN MAKANAN</h3>
+                            <tr>
+                                <td>Nama Makanan</td>
+                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.restomakanan_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.qty"/></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.subtotal"/></td>
+                            </tr>
+                        </table>
+                        <table class="table" style="width: 100%;">
+                        <h3 style="padding-top: 100pt; text-align: center;">DETAIL PENJUALAN MINUMAN</h3>
+                            <tr>
+                                <td>Nama Minuman</td>
+                                <td><span t-field="pj.restodetailpenjualanminuman_ids.restominuman_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><span t-field="pj.restodetailpenjualanminuman_ids.qty"/></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td><span t-field="pj.restodetailpenjualanminuman_ids.subtotal"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

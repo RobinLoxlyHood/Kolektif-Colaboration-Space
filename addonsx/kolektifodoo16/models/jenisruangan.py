@@ -5,5 +5,5 @@ class KolektifJenisRuangan(models.Model):
     _description = 'Jenis Ruangan'
 
     name = fields.Char(string='Jenis Ruangan', required=True)
-    kapasitas = fields.Integer(string='Kapasitas', required=True)
+    kapasitas = fields.Char(string='Kapasitas', required=True)
     harga_sewa_per_jam = fields.Integer(string='Harga Sewa per Jam', required=True)

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pembelian_template_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="pj">    
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 style="text-align: center;">NOTA PEMBELIAN</h1>
+                        <table class="table" style="width: 100%;">
+                            <tr>
+                                <td>No </td>
+                                <td><span t-field="pj.referensi"/></td>
+                            </tr>
+                            <tr>
+                                <td>Bahan Baku </td>
+                                <td><span t-field="pj.bahanbaku_id"/></td>
+                            </tr>
+                            <tr>
+                                <td>Nama Supllier</td>
+                                <td><span t-field="pj.supplier_id"/></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Transaksi </td>
+                                <td><span t-field="pj.tgl_transaksi"/></td>
+                            </tr>
+                            <tr>
+                                <td>Harga Modal </td>
+                                <td><span t-field="pj.modal"/></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity </td>
+                                <td><span t-field="pj.qty_bayar"/></td>
+                            </tr>
+                            <tr>
+                                <td>Total </td>
+                                <td><span t-field="pj.bayar"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

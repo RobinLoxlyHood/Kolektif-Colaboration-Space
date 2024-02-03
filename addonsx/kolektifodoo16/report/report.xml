@@ -1,0 +1,32 @@
+<odoo>
+    <record id="report_penyewaan_pdf" model="ir.actions.report">
+        <field name="name">Print Laporan Penyewaan</field>
+        <field name="model">kolektif.penyewaan</field>
+        <field name="report_type">qweb-pdf</field>
+        <!-- Sesuaikan ID eksternal dengan yang sebenarnya -->
+        <field name="report_name">kolektifodoo16.report_penyewaan_template_pdf</field>
+        <field name="report_file">kolektifodoo16.report_penyewaan_template_pdf</field>
+        <field name="binding_model_id" ref="model_kolektif_penyewaan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_penjualan_pdf" model="ir.actions.report">
+        <field name="name">Print Laporan Penjualan</field>
+        <field name="model">kolektif.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <!-- Sesuaikan ID eksternal dengan yang sebenarnya -->
+        <field name="report_name">kolektifodoo16.report_penjualan_template_pdf</field>
+        <field name="report_file">kolektifodoo16.report_penjualan_template_pdf</field>
+        <field name="binding_model_id" ref="model_kolektif_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="report_pembelian_pdf" model="ir.actions.report">
+        <field name="name">Print Laporan Pembelian</field>
+        <field name="model">kolektif.pembelian</field>
+        <field name="report_type">qweb-pdf</field>
+        <!-- Sesuaikan ID eksternal dengan yang sebenarnya -->
+        <field name="report_name">kolektifodoo16.report_pembelian_template_pdf</field>
+        <field name="report_file">kolektifodoo16.report_pembelian_template_pdf</field>
+        <field name="binding_model_id" ref="model_kolektif_pembelian"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

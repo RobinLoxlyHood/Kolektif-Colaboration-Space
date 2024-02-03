@@ -18,21 +18,27 @@ class KolektifPenjualan(models.Model):
     _description = 'RestoPenjualan'
     _rec_name = 'kode_penjualan'
     
-    qr_code = fields.Char(compute='_compute_qr_code', string='QR Code', store = True)    
+    qr_code = fields.Char(compute='_compute_qr_code', string='QR Code', store = False)    
     kode_penjualan = fields.Char(string="Kode Penjualan",
                                  required=True, 
                                  copy=False, 
                                  readonly=True,
                                  default=lambda self: _('New'))    
     nama = fields.Char(string='Nama Pembeli')
-    membership = fields.Boolean(string='Apakah member ?', default = False)
+    membership = fields.Boolean(string='Apakah member ?', default = True)
     pelanggan_id = fields.Many2one(comodel_name='kolektif.pelanggan', string='ID Pelanggan')
-        
+    id_member_penjualan = fields.Char(compute='_compute_id_member_penjualan', 
+                                      string='Nama Member') 
     tgl_transaksi = fields.Datetime(string='Tanggal Transaksi', default=fields.Datetime.now())
     total_bayar = fields.Integer(compute='_compute_total_bayar', string='Total Bayar', store=True)
     restodetailpenjualanmakanan_ids = fields.One2many(comodel_name='kolektif.detailpenjualanmakanan', inverse_name='restopenjualanmakanan_id', string='Detail Penjualan Makanan')
     restodetailpenjualanminuman_ids = fields.One2many(comodel_name='kolektif.detailpenjualanminuman', inverse_name='restopenjualanminuman_id', string='Detail Penjualan Minuman')
     
+    @api.depends('pelanggan_id')
+    def _compute_id_member_penjualan(self):
+        for rec in self:
+            rec.id_member_penjualan = rec.pelanggan_id.nama_pelanggan
+
     @api.depends('kode_penjualan')
     def _compute_qr_code(self):
         for rec in self:

@@ -10,14 +10,12 @@ class KolektifPembelian(models.Model):
         string="No. Reference",
         required=True, copy=False, readonly=True,
         default=lambda self: ('New'))
-    # referensi = fields.Char(string='Referensi')
     bahanbaku_id = fields.Many2one(comodel_name='kolektif.bahanbaku', string='Daftar Bahan Baku')
     supplier_id = fields.Many2one(comodel_name='kolektif.supplier', string='Daftar Supplier')
     tgl_transaksi = fields.Date(string='Tanggal Transaksi',
                                     default=fields.Date.today())
     modal = fields.Integer(compute='_compute_modal', string='Harga Modal')
     qty_bayar = fields.Integer(string='Quantity Beli')
-    
     bayar = fields.Integer(compute='_compute_bayar', string='Total bayar')
     
     

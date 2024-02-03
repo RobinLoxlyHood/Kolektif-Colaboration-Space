@@ -11,7 +11,7 @@ class KolektifRuangan(models.Model):
                                  readonly=True,
                                  default=lambda self: _('New'))
     jenisruangan_id = fields.Many2one('kolektif.jenisruangan', string='Jenis Ruangan', required=True)
-
+    
     @api.model
     def create(self,vals):
         if vals.get('kode', _("New")) == _("New"):  

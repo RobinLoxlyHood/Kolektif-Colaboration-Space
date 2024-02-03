@@ -7,10 +7,12 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
+                <field name="qr_code"/>
                 <field name="referensi"/>
                 <field name="ruangan_id"/>
                 <field name="membership"/>
                 <field name="pelanggan_id"/>
+                <field name="id_member_penjualan"/>
                 <field name="nama_pelanggan"/>
                 <field name="tgl_sewa"/>
                 <field name="jam_mulai"/>
@@ -31,17 +33,23 @@
                             <field name="referensi" readonly="1"/>
                         </h1>
                     </div>
-                    <group>
-                        <!-- Add your fields here -->
-                        <field name="membership"/>
-                        <field name="pelanggan_id" attrs="{'invisible':[('membership','=',False)]}"/>
-                        <field name="nama_pelanggan" attrs="{'invisible':[('membership','=',True)]}"/>
-                        <field name="ruangan_id"/>
-                        <field name="tgl_sewa"/>
-                        <field name="jam_mulai"/>
-                        <field name="jam_selesai"/>
-                        <field name="durasi_sewa"/>
-                        <field name="total_biaya"/>
+                    <group col="2">
+                        <group string="Kode">
+                            <field name="qr_code" widget='image'/>                            
+                        </group>
+                        <group string="Data Transaksi">
+                            <!-- Add your fields here -->
+                            <field name="membership"/>
+                            <field name="pelanggan_id" attrs="{'invisible':[('membership','=',False)]}"/>
+                            <field name="id_member_penjualan" attrs="{'invisible':[('membership','=',False)]}"/>
+                            <field name="nama_pelanggan" attrs="{'invisible':[('membership','=',True)]}"/>
+                            <field name="ruangan_id"/>
+                            <field name="tgl_sewa"/>
+                            <field name="jam_mulai"/>
+                            <field name="jam_selesai"/>
+                            <field name="durasi_sewa"/>
+                            <field name="total_biaya"/>
+                        </group>
                     </group>
                 </sheet>
             </form>

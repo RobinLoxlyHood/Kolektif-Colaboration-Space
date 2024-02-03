@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_penyewaan_template_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="pj">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 style="text-align: center;">REPORT PENYEWAAN</h1>
+                        <table class="table" style="width: 100%;">
+                            <tr>
+                                <td>No </td>
+                                <td><span t-field="pj.referensi"/></td>
+                            </tr>
+                            <tr>
+                                <td>Apakah Member </td>
+                                <td><span t-field="pj.membership"/></td>
+                            </tr>
+                            <tr>
+                                <td>Nama </td>
+                                <td><span t-field="pj.nama_pelanggan"/></td>
+                            </tr>
+                            <tr>
+                                <td>Daftar Ruangan </td>
+                                <td><span t-field="pj.ruangan_id"/></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Sewa </td>
+                                <td><span t-field="pj.tgl_sewa"/></td>
+                            </tr>
+                            <tr>
+                                <td>Jam Mulai </td>
+                                <td><span t-field="pj.jam_mulai"/></td>
+                            </tr>
+                            <tr>
+                                <td>Jam Selesai </td>
+                                <td><span t-field="pj.jam_selesai"/></td>
+                            </tr>
+                            <tr>
+                                <td>Durasi Sewa </td>
+                                <td><span t-field="pj.durasi_sewa"/></td>
+                            </tr>
+                            <tr>
+                                <td>Total Biaya </td>
+                                <td><span t-field="pj.total_biaya"/></td>
+                            </tr>
+                      </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
